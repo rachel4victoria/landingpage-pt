@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Usando a fonte linkada */
+   
+
+    
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.hero {
+    background: url('img/imgheader.jpg') no-repeat center center;
+    background-size: cover; /*redimensionar a imagem para completar a area do elemento*/
+    height: 100vh; 
+    color: #FEB21A; 
+    position: relative;
+    z-index: 1;
+    
+    /*centralização*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::before { /*opacidade*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Ajustado para mobile first */
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+
+/*Botão cta */
+.cta-button {
+    display: inline-block;
+    background-color: #134686;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #c94429;
+}
+
+
+.beneficios {
+    padding: 60px 0;
+    background-color: #f4f4f4; 
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/*grid*/
+.cards-grid {
+    display: grid;
+    gap: 30px; 
+    
+    /*mobile */
+    grid-template-columns: 1fr; 
+}
+
+.beneficio-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-5px); /* efeito para mouse */
+}
+
+.beneficio-card .icone {
+    font-size: 3rem; /* tamanho emoji */
+    display: block;
+    margin-bottom: 15px;
+}
+
+.beneficio-card h3 {
+    margin-bottom: 10px;
+    color: #FEB21A ; 
+
+
+
+}
+
+/* ESTILIZAÇÃO GERAL DA SEÇÃO DE CONTATO */
+.contato {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white; 
+}
+
+.contato h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* formulario */
+#contact-form { /*para telas maiores*/
+    max-width: 600px; 
+    margin: 0 auto;
+    text-align: left; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; 
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #FF5733; 
+    outline: none; 
+}
+
+
+.submit-button {
+    width: 100%; 
+    font-size: 1.2rem;
+    padding: 15px;
+   
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ESTILIZAÇÃO DO RODAPÉ (FOOTER) */
+footer {
+    background-color: #333; /* Fundo escuro para contraste */
+    color: #ccc; /* Cor do texto cinza claro */
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+/* Flexbox para o conteúdo principal do rodapé (desktop) */
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre os elementos */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Padrão Mobile: empilha os itens */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* footer */
+.footer-nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #FF5733; 
+}
+
+.footer-nav span {
+    color: #666; 
+}
+
+.developed-by {
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+
+
+/*Desktops*/
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 4rem; 
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .footer-content {
+        flex-direction: row; /* Desktop: coloca itens lado a lado */
+        text-align: left;
+    }
+}
+
